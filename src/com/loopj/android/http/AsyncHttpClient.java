@@ -108,7 +108,7 @@ public class AsyncHttpClient {
     private final Map<Context, List<WeakReference<Future<?>>>> requestMap;
     private final Map<String, String> clientHeaderMap;
 
-
+    private String userInfoString;
     /**
      * Creates a new AsyncHttpClient.
      */
@@ -189,6 +189,20 @@ public class AsyncHttpClient {
         return this.httpContext;
     }
 
+    /**
+     * 获得用户自定义字符串
+     */
+    public String getUserInfoString() {
+        return this.userInfoString;
+    }
+
+    /**
+     * 设置用户自定义字符串
+     */
+    public void setUserInfoString(String userInfo) {
+        this.userInfoString=userInfo;
+    }
+    
     /**
      * Sets an optional CookieStore to use when making requests
      * @param cookieStore The CookieStore implementation to use, usually an instance of {@link PersistentCookieStore}
